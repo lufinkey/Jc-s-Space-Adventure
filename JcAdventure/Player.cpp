@@ -113,11 +113,19 @@ namespace JcAdventure
 			if(Game::screenTapped())
 			{
 				//TODO fix so that you don't shoot if you tap in a certain area
-				double prevX = (double)Game::PrevTouchX(Game::getLastTapID());
-				if(prevX > 450)
-				{
-					shoot((float)direction((double)x, (double)y, prevX, (double)Game::PrevTouchY(Game::getLastTapID())));
-				}
+				#if defined(TARGET_OS_IPHONE) || defined(TARGET_IPHONE_SIMULATOR)
+					double prevX = (double)Game::PrevTouchX(Game::getLastTapID());
+					if(prevX > 450)
+					{
+						shoot((float)direction((double)x, (double)y, prevX, (double)Game::PrevTouchY(Game::getLastTapID())));
+					}
+				#else
+					double mousex = (double)Game::MouseX();
+					if(mousex > 450)
+					{
+						shoot((float)direction((double)x, (double)y, (double)mousex, (double)Game::MouseY()));
+					}
+				#endif
 			}
 			
 			ArrayList<TouchPoint> touches = Game::getTouchPoints();

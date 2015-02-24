@@ -58,10 +58,7 @@ namespace JcAdventure
 	
 	bool Game::screenTapped()
 	{
-		/*if(!Game::MouseState(Mouse::LEFTCLICK) && Game::PrevMouseState(Mouse::LEFTCLICK))
-		{
-			return true;
-		}*/
+#if defined(TARGET_OS_IPHONE) || defined(TARGET_IPHONE_SIMULATOR)
 		ArrayList<TouchPoint> touchPoints = Game::getTouchPoints();
 		ArrayList<TouchPoint> prevTouchPoints = Game::getPrevTouchPoints();
 		if(prevTouchPoints.size()>touchPoints.size())
@@ -87,6 +84,13 @@ namespace JcAdventure
 			}
 		}
 		return false;
+#else
+		if(!Game::MouseState(Mouse::LEFTCLICK) && Game::PrevMouseState(Mouse::LEFTCLICK))
+		{
+			return true;
+		}
+		return false;
+#endif
 	}
 	
 	long Game::getLastTapID()

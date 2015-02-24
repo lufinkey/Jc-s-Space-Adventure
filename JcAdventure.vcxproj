@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B98C19D3-E901-4715-A5DB-C57619462089}</ProjectGuid>
+    <RootNamespace>JcAdventure</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>SDL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2-d.lib;SDL2main-d.lib;SDL2_image-d.lib;SDL2_mixer-d.lib;SDL2_ttf-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>SDL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameEngine\Actor\Actor.cpp" />
+    <ClCompile Include="GameEngine\Actor\Animation.cpp" />
+    <ClCompile Include="GameEngine\Actor\AnimationManager.cpp" />
+    <ClCompile Include="GameEngine\Actor\PrimitiveActor.cpp" />
+    <ClCompile Include="GameEngine\Actor\TextActor.cpp" />
+    <ClCompile Include="GameEngine\Actor\WireframeActor.cpp" />
+    <ClCompile Include="GameEngine\Application.cpp" />
+    <ClCompile Include="GameEngine\ApplicationEventListener.cpp" />
+    <ClCompile Include="GameEngine\AssetManager.cpp" />
+    <ClCompile Include="GameEngine\BatchLoader.cpp" />
+    <ClCompile Include="GameEngine\CPPBridge.cpp" />
+    <ClCompile Include="GameEngine\Graphics\Graphics2D.cpp" />
+    <ClCompile Include="GameEngine\Input\Keys.cpp" />
+    <ClCompile Include="GameEngine\Output\Console.cpp" />
+    <ClCompile Include="GameEngine\ScreenManager\MenuScreen.cpp" />
+    <ClCompile Include="GameEngine\ScreenManager\Screen.cpp" />
+    <ClCompile Include="GameEngine\ScreenManager\ScreenManager.cpp" />
+    <ClCompile Include="GameEngine\Sound\Music.cpp" />
+    <ClCompile Include="GameEngine\Sound\Sound.cpp" />
+    <ClCompile Include="GameEngine\Util\Bitset.cpp" />
+    <ClCompile Include="GameEngine\Util\BufferedImage.cpp" />
+    <ClCompile Include="GameEngine\Util\Color.cpp" />
+    <ClCompile Include="GameEngine\Util\Font.cpp" />
+    <ClCompile Include="GameEngine\Util\Image.cpp" />
+    <ClCompile Include="GameEngine\Util\PixelIterator.cpp" />
+    <ClCompile Include="GameEngine\Util\posixtime.cpp" />
+    <ClCompile Include="GameEngine\Util\PrefManager.cpp" />
+    <ClCompile Include="GameEngine\Util\String.cpp" />
+    <ClCompile Include="GameEngine\Util\Thread.cpp" />
+    <ClCompile Include="GameEngine\View.cpp" />
+    <ClCompile Include="JcAdventure\Bosses\Boss.cpp" />
+    <ClCompile Include="JcAdventure\Bosses\Chambers.cpp" />
+    <ClCompile Include="JcAdventure\Bosses\Weisbrod.cpp" />
+    <ClCompile Include="JcAdventure\Effect.cpp" />
+    <ClCompile Include="JcAdventure\Effects\Explosions.cpp" />
+    <ClCompile Include="JcAdventure\Enemies\Joey.cpp" />
+    <ClCompile Include="JcAdventure\GameElement.cpp" />
+    <ClCompile Include="JcAdventure\Global.cpp" />
+    <ClCompile Include="JcAdventure\HUD.cpp" />
+    <ClCompile Include="JcAdventure\Level.cpp" />
+    <ClCompile Include="JcAdventure\Levels\ChambersLevel.cpp" />
+    <ClCompile Include="JcAdventure\Levels\Intro.cpp" />
+    <ClCompile Include="JcAdventure\Levels\WeisbrodLevel.cpp" />
+    <ClCompile Include="JcAdventure\Player.cpp" />
+    <ClCompile Include="JcAdventure\ProgressBar.cpp" />
+    <ClCompile Include="JcAdventure\Projectile.cpp" />
+    <ClCompile Include="JcAdventure\Scene.cpp" />
+    <ClCompile Include="JcAdventure\Screens\TitleScreen.cpp" />
+    <ClCompile Include="JcAdventure\TransitionManager.cpp" />
+    <ClCompile Include="JcAdventure\Transitions\Blinds.cpp" />
+    <ClCompile Include="JcAdventure\Transitions\Fade.cpp" />
+    <ClCompile Include="JcAdventure\Transitions\Transition.cpp" />
+    <ClCompile Include="JcAdventure\Util\RandomText.cpp" />
+    <ClCompile Include="JcAdventure\WordBubble.cpp" />
+    <ClCompile Include="Program.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameEngine\Actor\Actor.h" />
+    <ClInclude Include="GameEngine\Actor\Animation.h" />
+    <ClInclude Include="GameEngine\Actor\AnimationManager.h" />
+    <ClInclude Include="GameEngine\Actor\PrimitiveActor.h" />
+    <ClInclude Include="GameEngine\Actor\TextActor.h" />
+    <ClInclude Include="GameEngine\Actor\WireframeActor.h" />
+    <ClInclude Include="GameEngine\Application.h" />
+    <ClInclude Include="GameEngine\ApplicationEventListener.h" />
+    <ClInclude Include="GameEngine\AssetManager.h" />
+    <ClInclude Include="GameEngine\BatchLoader.h" />
+    <ClInclude Include="GameEngine\CPPBridge.h" />
+    <ClInclude Include="GameEngine\forwards.h" />
+    <ClInclude Include="GameEngine\GameEngine.h" />
+    <ClInclude Include="GameEngine\GlobalDefs.h" />
+    <ClInclude Include="GameEngine\Graphics\Graphics2D.h" />
+    <ClInclude Include="GameEngine\Input\Keys.h" />
+    <ClInclude Include="GameEngine\Input\Mouse.h" />
+    <ClInclude Include="GameEngine\Input\TouchPoint.h" />
+    <ClInclude Include="GameEngine\ObjCBridge.h" />
+    <ClInclude Include="GameEngine\Output\Console.h" />
+    <ClInclude Include="GameEngine\ScreenManager\MenuScreen.h" />
+    <ClInclude Include="GameEngine\ScreenManager\Screen.h" />
+    <ClInclude Include="GameEngine\ScreenManager\ScreenManager.h" />
+    <ClInclude Include="GameEngine\Sound\Music.h" />
+    <ClInclude Include="GameEngine\Sound\Sound.h" />
+    <ClInclude Include="GameEngine\Util\ArrayList.h" />
+    <ClInclude Include="GameEngine\Util\Bitset.h" />
+    <ClInclude Include="GameEngine\Util\BufferedImage.h" />
+    <ClInclude Include="GameEngine\Util\Color.h" />
+    <ClInclude Include="GameEngine\Util\Font.h" />
+    <ClInclude Include="GameEngine\Util\Image.h" />
+    <ClInclude Include="GameEngine\Util\PixelIterator.h" />
+    <ClInclude Include="GameEngine\Util\posixtime.h" />
+    <ClInclude Include="GameEngine\Util\PrefManager.h" />
+    <ClInclude Include="GameEngine\Util\String.h" />
+    <ClInclude Include="GameEngine\Util\Thread.h" />
+    <ClInclude Include="GameEngine\Util\Vector2.h" />
+    <ClInclude Include="GameEngine\View.h" />
+    <ClInclude Include="JcAdventure\Bosses\Boss.h" />
+    <ClInclude Include="JcAdventure\Bosses\Chambers.h" />
+    <ClInclude Include="JcAdventure\Bosses\Weisbrod.h" />
+    <ClInclude Include="JcAdventure\Effect.h" />
+    <ClInclude Include="JcAdventure\Effects\Explosions.h" />
+    <ClInclude Include="JcAdventure\Enemies\Joey.h" />
+    <ClInclude Include="JcAdventure\GameElement.h" />
+    <ClInclude Include="JcAdventure\Global.h" />
+    <ClInclude Include="JcAdventure\HUD.h" />
+    <ClInclude Include="JcAdventure\Level.h" />
+    <ClInclude Include="JcAdventure\Levels\ChambersLevel.h" />
+    <ClInclude Include="JcAdventure\Levels\Intro.h" />
+    <ClInclude Include="JcAdventure\Levels\WeisbrodLevel.h" />
+    <ClInclude Include="JcAdventure\Player.h" />
+    <ClInclude Include="JcAdventure\ProgressBar.h" />
+    <ClInclude Include="JcAdventure\Projectile.h" />
+    <ClInclude Include="JcAdventure\Scene.h" />
+    <ClInclude Include="JcAdventure\Screens\TitleScreen.h" />
+    <ClInclude Include="JcAdventure\TransitionManager.h" />
+    <ClInclude Include="JcAdventure\Transitions\Blinds.h" />
+    <ClInclude Include="JcAdventure\Transitions\Fade.h" />
+    <ClInclude Include="JcAdventure\Transitions\Transition.h" />
+    <ClInclude Include="JcAdventure\Util\RandomText.h" />
+    <ClInclude Include="JcAdventure\WordBubble.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameEngine\ObjCBridge.mm">
+      <FileType>Document</FileType>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

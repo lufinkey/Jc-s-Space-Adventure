@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GameEngine">
+      <UniqueIdentifier>{7b9f69b3-3def-496d-9470-dd3f9e292b12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\Actor">
+      <UniqueIdentifier>{a8867268-5c33-4ddd-8f36-52f3ccb63a43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\Graphics">
+      <UniqueIdentifier>{38e50df3-6fa5-4e2f-97a3-b2484f9d476a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\Util">
+      <UniqueIdentifier>{cf908591-b35c-4fe9-ac39-3242df5f46c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\Sound">
+      <UniqueIdentifier>{dfedfb8b-bfd8-4de2-bf1f-abd79bdd5ad6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\ScreenManager">
+      <UniqueIdentifier>{1a860a14-d33a-40be-b6b0-c4b3d8fcfb9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\Output">
+      <UniqueIdentifier>{65cd3d99-fd52-4262-8d93-5316fe033424}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\Input">
+      <UniqueIdentifier>{d716996b-c6e5-4e8c-9c83-cfb380686543}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JcAdventure">
+      <UniqueIdentifier>{3b4509c1-312d-43fc-93c0-d0bbc68e9408}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JcAdventure\Bosses">
+      <UniqueIdentifier>{569d9048-7078-434c-b4b1-fcd51237ba0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JcAdventure\Effects">
+      <UniqueIdentifier>{1e57d644-fe2c-44f0-94e4-803dfbd32fa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JcAdventure\Enemies">
+      <UniqueIdentifier>{1aefeb79-86e3-485f-9cee-89eb22a9ce0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JcAdventure\Levels">
+      <UniqueIdentifier>{589a6a1e-e01a-462f-849a-08c28254385c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JcAdventure\Util">
+      <UniqueIdentifier>{eef51ef9-ad6a-4d3d-8e06-08caa709bb5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JcAdventure\Transitions">
+      <UniqueIdentifier>{a9768af0-a448-4005-b773-4a6a7dc4dc8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JcAdventure\Screens">
+      <UniqueIdentifier>{87c516a9-46ac-4a3a-a7d2-e60c2185b334}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameEngine\Actor\Actor.cpp">
+      <Filter>GameEngine\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Actor\Animation.cpp">
+      <Filter>GameEngine\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Actor\AnimationManager.cpp">
+      <Filter>GameEngine\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Actor\PrimitiveActor.cpp">
+      <Filter>GameEngine\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Actor\TextActor.cpp">
+      <Filter>GameEngine\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Actor\WireframeActor.cpp">
+      <Filter>GameEngine\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Graphics\Graphics2D.cpp">
+      <Filter>GameEngine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Input\Keys.cpp">
+      <Filter>GameEngine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Output\Console.cpp">
+      <Filter>GameEngine\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\ScreenManager\MenuScreen.cpp">
+      <Filter>GameEngine\ScreenManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\ScreenManager\Screen.cpp">
+      <Filter>GameEngine\ScreenManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\ScreenManager\ScreenManager.cpp">
+      <Filter>GameEngine\ScreenManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Sound\Music.cpp">
+      <Filter>GameEngine\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Sound\Sound.cpp">
+      <Filter>GameEngine\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Util\Bitset.cpp">
+      <Filter>GameEngine\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Util\BufferedImage.cpp">
+      <Filter>GameEngine\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Util\Color.cpp">
+      <Filter>GameEngine\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Util\Font.cpp">
+      <Filter>GameEngine\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Util\Image.cpp">
+      <Filter>GameEngine\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Util\PixelIterator.cpp">
+      <Filter>GameEngine\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Util\PrefManager.cpp">
+      <Filter>GameEngine\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Util\String.cpp">
+      <Filter>GameEngine\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Util\Thread.cpp">
+      <Filter>GameEngine\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Application.cpp">
+      <Filter>GameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\ApplicationEventListener.cpp">
+      <Filter>GameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\AssetManager.cpp">
+      <Filter>GameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\BatchLoader.cpp">
+      <Filter>GameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\View.cpp">
+      <Filter>GameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Bosses\Boss.cpp">
+      <Filter>JcAdventure\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Bosses\Chambers.cpp">
+      <Filter>JcAdventure\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Bosses\Weisbrod.cpp">
+      <Filter>JcAdventure\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Effects\Explosions.cpp">
+      <Filter>JcAdventure\Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Enemies\Joey.cpp">
+      <Filter>JcAdventure\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Levels\ChambersLevel.cpp">
+      <Filter>JcAdventure\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Levels\Intro.cpp">
+      <Filter>JcAdventure\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Levels\WeisbrodLevel.cpp">
+      <Filter>JcAdventure\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Screens\TitleScreen.cpp">
+      <Filter>JcAdventure\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Transitions\Blinds.cpp">
+      <Filter>JcAdventure\Transitions</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Transitions\Fade.cpp">
+      <Filter>JcAdventure\Transitions</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Transitions\Transition.cpp">
+      <Filter>JcAdventure\Transitions</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Util\RandomText.cpp">
+      <Filter>JcAdventure\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Program.cpp" />
+    <ClCompile Include="JcAdventure\Effect.cpp">
+      <Filter>JcAdventure</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\GameElement.cpp">
+      <Filter>JcAdventure</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Global.cpp">
+      <Filter>JcAdventure</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\HUD.cpp">
+      <Filter>JcAdventure</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Level.cpp">
+      <Filter>JcAdventure</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Player.cpp">
+      <Filter>JcAdventure</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\ProgressBar.cpp">
+      <Filter>JcAdventure</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Projectile.cpp">
+      <Filter>JcAdventure</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\Scene.cpp">
+      <Filter>JcAdventure</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\TransitionManager.cpp">
+      <Filter>JcAdventure</Filter>
+    </ClCompile>
+    <ClCompile Include="JcAdventure\WordBubble.cpp">
+      <Filter>JcAdventure</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\CPPBridge.cpp">
+      <Filter>GameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Util\posixtime.cpp">
+      <Filter>GameEngine\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\ObjCBridge.mm">
+      <Filter>GameEngine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameEngine\Actor\Actor.h">
+      <Filter>GameEngine\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Actor\Animation.h">
+      <Filter>GameEngine\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Actor\AnimationManager.h">
+      <Filter>GameEngine\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Actor\PrimitiveActor.h">
+      <Filter>GameEngine\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Actor\TextActor.h">
+      <Filter>GameEngine\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Actor\WireframeActor.h">
+      <Filter>GameEngine\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Graphics\Graphics2D.h">
+      <Filter>GameEngine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Input\Keys.h">
+      <Filter>GameEngine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Input\TouchPoint.h">
+      <Filter>GameEngine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Output\Console.h">
+      <Filter>GameEngine\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\ScreenManager\MenuScreen.h">
+      <Filter>GameEngine\ScreenManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\ScreenManager\Screen.h">
+      <Filter>GameEngine\ScreenManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\ScreenManager\ScreenManager.h">
+      <Filter>GameEngine\ScreenManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Sound\Music.h">
+      <Filter>GameEngine\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Sound\Sound.h">
+      <Filter>GameEngine\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Util\ArrayList.h">
+      <Filter>GameEngine\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Util\Bitset.h">
+      <Filter>GameEngine\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Util\BufferedImage.h">
+      <Filter>GameEngine\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Util\Color.h">
+      <Filter>GameEngine\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Util\Font.h">
+      <Filter>GameEngine\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Util\Image.h">
+      <Filter>GameEngine\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Util\PixelIterator.h">
+      <Filter>GameEngine\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Util\PrefManager.h">
+      <Filter>GameEngine\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Util\String.h">
+      <Filter>GameEngine\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Util\Thread.h">
+      <Filter>GameEngine\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Util\Vector2.h">
+      <Filter>GameEngine\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Application.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\ApplicationEventListener.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\AssetManager.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\BatchLoader.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\forwards.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\GameEngine.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\GlobalDefs.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\View.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Bosses\Boss.h">
+      <Filter>JcAdventure\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Bosses\Chambers.h">
+      <Filter>JcAdventure\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Bosses\Weisbrod.h">
+      <Filter>JcAdventure\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Effects\Explosions.h">
+      <Filter>JcAdventure\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Enemies\Joey.h">
+      <Filter>JcAdventure\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Levels\ChambersLevel.h">
+      <Filter>JcAdventure\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Levels\Intro.h">
+      <Filter>JcAdventure\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Levels\WeisbrodLevel.h">
+      <Filter>JcAdventure\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Screens\TitleScreen.h">
+      <Filter>JcAdventure\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Transitions\Blinds.h">
+      <Filter>JcAdventure\Transitions</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Transitions\Fade.h">
+      <Filter>JcAdventure\Transitions</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Transitions\Transition.h">
+      <Filter>JcAdventure\Transitions</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Util\RandomText.h">
+      <Filter>JcAdventure\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="JcAdventure\Effect.h">
+      <Filter>JcAdventure</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\GameElement.h">
+      <Filter>JcAdventure</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Global.h">
+      <Filter>JcAdventure</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\HUD.h">
+      <Filter>JcAdventure</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Level.h">
+      <Filter>JcAdventure</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Player.h">
+      <Filter>JcAdventure</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\ProgressBar.h">
+      <Filter>JcAdventure</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Projectile.h">
+      <Filter>JcAdventure</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\Scene.h">
+      <Filter>JcAdventure</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\TransitionManager.h">
+      <Filter>JcAdventure</Filter>
+    </ClInclude>
+    <ClInclude Include="JcAdventure\WordBubble.h">
+      <Filter>JcAdventure</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\ObjCBridge.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\CPPBridge.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Util\posixtime.h">
+      <Filter>GameEngine\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Input\Mouse.h">
+      <Filter>GameEngine\Input</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

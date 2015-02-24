@@ -1,4 +1,6 @@
 
+#define _CRT_SECURE_NO_WARNINGS
+
 #include "PrefManager.h"
 #include "../GlobalDefs.h"
 #include "SDL_rwops.h"
@@ -39,12 +41,12 @@ namespace GameEngine
 		else
 		{
 			SDL_RWseek(file,0,RW_SEEK_END);
-			int total = SDL_RWtell(file);
+			long long total = SDL_RWtell(file);
 			SDL_RWseek(file,0,RW_SEEK_SET);
 			char*fileText = new char[total];
 			SDL_RWread(file,fileText,1,total);
 			String currentLine = "";
-			for(int i=0; i<total; i++)
+			for(long long i=0; i<total; i++)
 			{
 				char c = fileText[i];
 				if(c!='\0' && ((int)c)>=0)

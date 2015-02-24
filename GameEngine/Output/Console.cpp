@@ -1,4 +1,6 @@
 
+#define _CRT_SECURE_NO_WARNINGS
+
 #include "../Output/Console.h"
 #include <iostream>
 #include "SDL_rwops.h"

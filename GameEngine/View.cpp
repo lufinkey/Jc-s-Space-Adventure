@@ -11,8 +11,8 @@ namespace GameEngine
 	
 	float View::Zoom = 1.0;
 	
-	int View::windowWidth = 480;
-	int View::windowHeight = 320;
+	int View::windowWidth = 900;
+	int View::windowHeight = 600;
 	
 	int View::scaleWidth = 480;
 	int View::scaleHeight = 320;

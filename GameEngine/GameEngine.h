@@ -14,7 +14,7 @@
 
 #include "Output/Console.h"
 
-#include "P2P/P2PManager.h"
+//#include "P2P/P2PManager.h"
 
 #include "ScreenManager/MenuScreen.h"
 #include "ScreenManager/Screen.h"

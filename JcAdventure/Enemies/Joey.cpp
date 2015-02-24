@@ -7,4 +7,19 @@ namespace JcAdventure
 	{
 		//
 	}
+
+	Joey::~Joey()
+	{
+		//
+	}
+
+	void Joey::Update(long gameTime)
+	{
+		GameElement::Update(gameTime);
+	}
+	
+	void Joey::Draw(Graphics2D&g, long gameTime)
+	{
+		GameElement::Draw(g, gameTime);
+	}
 }

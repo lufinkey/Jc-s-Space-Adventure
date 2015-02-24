@@ -4,6 +4,9 @@
 #include "../Application.h"
 #include "../Output/Console.h"
 #include "../Util/ArrayList.h"
+#ifdef __APPLE__
+#include "TargetConditionals.h"
+#endif
 
 namespace GameEngine
 {
@@ -538,6 +541,7 @@ namespace GameEngine
 	{
 		prevclicked = clicked;
 		
+#if defined(TARGET_OS_IPHONE) || defined(TARGET_IPHONE_SIMULATOR)
 		long prevTouchId = currentTouchId;
 		
 		bool onmouseenter = false;
@@ -594,6 +598,31 @@ namespace GameEngine
 		{
 			onRelease();
 		}
+#else
+		if(mouseOver())
+		{
+			if(!mouseover)
+	    	{
+	    		mouseover=true;
+	    		onMouseEnter();
+	    	}
+			if(Application::MouseState(Mouse::LEFTCLICK) && !Application::PrevMouseState(Mouse::LEFTCLICK))
+			{
+				clicked = true;
+				onClick();
+			}
+		}
+		else if(mouseover)
+		{
+			mouseover=false;
+			onMouseLeave();
+		}
+		if(clicked && !Application::MouseState(Mouse::LEFTCLICK))
+		{
+			clicked = false;
+			onRelease();
+		}
+#endif
 	}
 		
 	void TextActor::Draw(Graphics2D& g, long gameTime)
@@ -737,26 +766,31 @@ namespace GameEngine
 
 	void TextActor::onMouseEnter() //When mouse enters Actor
 	{
+		Console::WriteLine("mouseenter");
 	    //Open for implementation
 	}
 	    
 	void TextActor::onMouseLeave() //When mouse enters Actor
 	{
+		Console::WriteLine("mouseleave");
 	    //Open for implementation
 	}
 		
 	void TextActor::onClick() //When Actor is clicked
 	{
+		Console::WriteLine("mouseclick");
 		//Open for implementation
 	}
 		
 	void TextActor::onRelease() //When Actor's click is released
 	{
+		Console::WriteLine("mouserelease");
 		//Open for implementation
 	}
 		
 	bool TextActor::mouseOver()
 	{
+#if defined(TARGET_OS_IPHONE) || defined(TARGET_IPHONE_SIMULATOR)
 		if(mouseover)
 		{
 			if(Application::checkTouchActive(currentTouchId))
@@ -778,6 +812,58 @@ namespace GameEngine
 			}
 		}
 		return false;
+#else
+		int mousex = 0;
+		int mousey = 0;
+		if(relative)
+		{
+			mousex = (int)(Application::MouseX() + View::x);
+			mousey = (int)(Application::MouseY() + View::y);
+		}
+		else
+		{
+			mousex = Application::MouseX();
+			mousey = Application::MouseY();
+		}
+		switch(alignment)
+		{
+			case ALIGN_BOTTOMLEFT:
+	    	if (mousex<(x+width) && mousex>x && mousey<y && mousey>(y-height))
+	    	{
+	    		return true;
+	    	}
+	    	break;
+	    		
+			case ALIGN_BOTTOMRIGHT:
+		    if (mousex<(x-width) && mousex>x && mousey<y && mousey>(y-height))
+		    {
+		    	return true;
+		    }
+		    break;
+	    		
+			case ALIGN_CENTER:
+	    	if (mousex<(x+(width/2)) && mousex>(x-(width/2)) && mousey<(y+(height/2)) && mousey>(y-(height/2)))
+	    	{
+	    		return true;
+	    	}
+	    	break;
+	    		
+			case ALIGN_TOPLEFT:
+		    if (mousex<(x+width) && mousex>x && mousey<y && mousey>(y+height))
+		    {
+		    	return true;
+		    }
+		    break;
+		    		
+			case ALIGN_TOPRIGHT:
+			if (mousex<(x-width) && mousex>x && mousey<y && mousey>(y+height))
+			{
+			    return true;
+			}
+			break;
+		}
+	    return false;
+#endif
 	}
 		
 	bool TextActor::isClicked()

@@ -24,6 +24,7 @@ namespace GameEngine
 
 	void MenuScreen::Update(long gameTime)
 	{
+#if defined(TARGET_OS_IPHONE) || defined(TARGET_IPHONE_SIMULATOR)
 		long prevTouchId = -1;
 		if(selectedIndex>-1)
 		{
@@ -73,6 +74,50 @@ namespace GameEngine
 			Items.get(prevSelectedIndex)->setSelected(false);
 			prevSelectedIndex = -1;
 		}
+#else
+		Screen::Update(gameTime);
+		if(Application::MouseState(Mouse::LEFTCLICK))
+		{
+			selecting = true;
+		}
+		else
+		{
+			selecting = false;
+		}
+		
+		
+		bool canBeSelected = true;
+		selectedIndex = -1;
+		for(int i=(Items.size()-1); i>=0; i--)
+		{
+			MenuItem*currentItem = Items.get(i);
+			currentItem->Update(gameTime);
+			if(canBeSelected)
+			{
+				if(currentItem->MouseOver())
+				{
+					currentItem->setSelected(true);
+					selectedIndex = i;
+					canBeSelected = false;
+				}
+				else
+				{
+					currentItem->setSelected(false);
+				}
+			}
+			else
+			{
+				currentItem->setSelected(false);
+			}
+		}
+		
+		if(selectedIndex>=0 && !Application::MouseState(Mouse::LEFTCLICK) && Application::PrevMouseState(Mouse::LEFTCLICK))
+		{
+			Items.get(selectedIndex)->OnRelease();
+			Items.get(selectedIndex)->setSelected(false);
+			selectedIndex = -1;
+		}
+#endif
 	}
 
 	void MenuScreen::Draw(Graphics2D& g, long gameTime)

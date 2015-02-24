@@ -5,6 +5,9 @@
 #include "../Util/PixelIterator.h"
 #include "../View.h"
 #include "../Output/Console.h"
+#ifdef __APPLE__
+#include "TargetConditionals.h"
+#endif
 
 namespace GameEngine
 {
@@ -420,6 +423,7 @@ namespace GameEngine
 	    
 	    updateMoveTo();
 		
+#if defined(TARGET_OS_IPHONE) || defined(TARGET_IPHONE_SIMULATOR)
 		long prevTouchId = currentTouchId;
 		
 		bool onmouseenter = false;
@@ -488,6 +492,43 @@ namespace GameEngine
 		{
 			onRelease();
 		}
+#else
+		if(mouseOver())
+	    {
+	    	if(!mouseover)
+	    	{
+	    		mouseover=true;
+	    		if(eventEnabled(EVENT_MOUSEENTER))
+	    		{
+	    			onMouseEnter();
+	    		}
+	    	}
+	    	if (Application::MouseState(Mouse::LEFTCLICK) && !Application::PrevMouseState(Mouse::LEFTCLICK))
+	    	{
+	    		clicked = true;
+	    		if(eventEnabled(EVENT_MOUSECLICK))
+	    		{
+	    			onClick();
+	    		}
+	    	}
+	    }
+	    else if(mouseover)
+	    {
+	    	mouseover=false;
+	    	if(eventEnabled(EVENT_MOUSELEAVE))
+			{
+	    		onMouseLeave();
+			}
+	    }
+	    if(clicked && !Application::MouseState(Mouse::LEFTCLICK))
+	    {
+	    	clicked = false;
+	    	if(eventEnabled(EVENT_MOUSERELEASE))
+			{
+	    		onRelease();
+			}
+	    }
+#endif
 	}
 	
 	void Actor::Draw(Graphics2D& g,long gameTime)
@@ -657,11 +698,12 @@ namespace GameEngine
 
 	bool Actor::mouseOver()
 	{
+#if defined(TARGET_OS_IPHONE) || defined(TARGET_IPHONE_SIMULATOR)
 		if(mouseover)
 		{
 			if(Application::checkTouchActive(currentTouchId))
 			{
-				if(checkHover(Application::TouchX(currentTouchId), Application::TouchY(currentTouchId)))
+				if(checkHover((float)Application::TouchX(currentTouchId), (float)Application::TouchY(currentTouchId)))
 				{
 					return true;
 				}
@@ -678,6 +720,42 @@ namespace GameEngine
 			}
 		}
 		return false;
+#else
+		int mousex = 0;
+		int mousey = 0;
+		if(relative)
+		{
+			mousex = (int)((float)Application::MouseX() + View::x);
+    		mousey = (int)((float)Application::MouseY() + View::y);
+		}
+		else
+		{
+    		mousex = (int)Application::MouseX();
+    		mousey = (int)Application::MouseY();
+		}
+	    if(mouseOverPixel)
+    	{
+    		if (mousex<(x+(width/2)) && mousex>(x-(width/2)) && mousey<(y+(height/2)) && mousey>(y-(height/2)))
+	    	{
+	    		int rX = (int)((mousex - (x-(width/2)))/Scale);
+	    		int rY = (int)((mousey - (y-(height/2)))/Scale);
+	    		if(pixelAtPoint(rX, rY))
+	    		{
+	    			return true;
+	    		}
+	    		return false;
+	    	}
+	    	return false;
+    	}
+    	else
+    	{
+    		if (mousex<(x+(width/2)) && mousex>(x-(width/2)) && mousey<(y+(height/2)) && mousey>(y-(height/2)))
+	    	{
+	    		return true;
+	    	}
+    		return false;
+    	}
+#endif
 	}
 	
 	void Actor::onMouseEnter() //When mouse enters Actor

@@ -6,6 +6,7 @@
 #include "Util/String.h"
 #include "ApplicationEventListener.h"
 #include "Input/TouchPoint.h"
+#include "Input/Mouse.h"
 #include "BatchLoader.h"
 
 #pragma once
@@ -65,9 +66,21 @@ namespace GameEngine
 		static bool prevKeyState[526];
 		static int currentLastKey;
 		static int lastKey;
+		
 		static ArrayList<TouchPoint> currentTouchPoints;
 		static ArrayList<TouchPoint> touchPoints;
 		static ArrayList<TouchPoint> prevTouchPoints;
+		
+		static const int totalMousestates = 4;
+		static bool prevMouseState[4];
+		static bool currentMouseState[4];
+		static bool mouseState[4];
+		static int mouseX;
+		static int mouseY;
+		static int currentMouseX;
+		static int currentMouseY;
+		static int prevMouseX;
+		static int prevMouseY;
 		
 		static bool minimizing;
 		static bool readyToMinimize;
@@ -80,6 +93,9 @@ namespace GameEngine
 		static void keyReleased(int keycode);
 		static void mousePressed(int eventcode);
 		static void mouseReleased(int eventcode);
+		static void mouseEntered();
+		static void mouseExited();
+		static void mouseMoved(int x1, int y1);
 		static void addTouchPoint(long ID, float x, float y);
 		static void updateTouchPoint(long ID, float x, float y);
 		static void removeTouchPoint(long ID, float x, float y);
@@ -87,6 +103,7 @@ namespace GameEngine
 		static TouchPoint*getPrevTouchPoint(long ID);
 		
 		static void updateKeys(bool*keys1, bool*keys2);
+		static void updateMouse(bool*mouse1, bool*mouse2);
 		static void updateTouchPoints(ArrayList<TouchPoint>&points1, ArrayList<TouchPoint>&points2);
 		
 	public:
@@ -125,6 +142,13 @@ namespace GameEngine
 		static bool checkPrevTouchActive(long touchID);
 		static ArrayList<TouchPoint> getTouchPoints();
 		static ArrayList<TouchPoint> getPrevTouchPoints();
+
+		static bool MouseState(int state);
+		static bool PrevMouseState(int state);
+		static int MouseX();
+		static int PrevMouseX();
+		static int MouseY();
+		static int PrevMouseY();
 		
 		static void setUpdatesPerFrame(int total);
 		static long getFrame();
