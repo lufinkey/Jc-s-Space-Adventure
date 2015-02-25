@@ -766,25 +766,21 @@ namespace GameEngine
 
 	void TextActor::onMouseEnter() //When mouse enters Actor
 	{
-		Console::WriteLine("mouseenter");
 	    //Open for implementation
 	}
 	    
 	void TextActor::onMouseLeave() //When mouse enters Actor
 	{
-		Console::WriteLine("mouseleave");
 	    //Open for implementation
 	}
 		
 	void TextActor::onClick() //When Actor is clicked
 	{
-		Console::WriteLine("mouseclick");
 		//Open for implementation
 	}
 		
 	void TextActor::onRelease() //When Actor's click is released
 	{
-		Console::WriteLine("mouserelease");
 		//Open for implementation
 	}
 		
